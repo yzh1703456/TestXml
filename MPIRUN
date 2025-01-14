@@ -198,7 +198,7 @@ else
       network_config="--mca pml ob1 \
               --mca btl ^openib,smcuda --mca btl_tcp_if_include =bond0 \
               --mca oob_tcp_if_include bond0 \
-              -x NCCL_IB_DISABLE=0 \
+              -x NCCL_IB_DISABLE=1 \
               -x NCCL_IB_GID_INDEX=3 \
               -x HOROVOD_MPI_THREADS_DISABLE=1"
   else
@@ -208,12 +208,12 @@ else
               network_config="--mca pml ob1 \
                   --mca btl ^openib,smcuda --mca btl_tcp_if_include ${NCCL_SOCKET_IFNAME#=} \
                   --mca oob_tcp_if_include ${NCCL_SOCKET_IFNAME#=} \
-                  -x NCCL_IB_DISABLE=0 \
+                  -x NCCL_IB_DISABLE=1 \
                   -x HOROVOD_MPI_THREADS_DISABLE=1"
           else
               network_config="--mca pml ob1 \
                   --mca btl ^openib,smcuda --mca btl_tcp_if_include ${NCCL_SOCKET_IFNAME#=} \
-                  -x NCCL_IB_DISABLE=0 \
+                  -x NCCL_IB_DISABLE=1 \
                   -x HOROVOD_MPI_THREADS_DISABLE=1"
           fi
       else
