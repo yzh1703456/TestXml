@@ -148,7 +148,7 @@ else
       mapping="-bind-to none"
   else
     if [[ $ARNOLD_WORKER_GPU -eq 8 ]]; then
-        mapping="-bind-to socket"
+        mapping="-bind-to none"
     else
         mapping="-bind-to none"
     fi
